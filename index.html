@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Bin2Dec</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Binary to Decimal Converter</h1>
+      <form>
+        <div class="form-group">
+          <label for="binaryInput">Enter a binary number:</label>
+          <input type="text" class="form-control" id="binaryInput" placeholder="e.g. 1101">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="convertBinaryToDecimal()">Convert</button>
+      </form>
+      <div class="mt-3">
+        <span id="result"></span>
+      </div>
+    </div>
+    <script>
+      function binaryToDecimal(binary) {
+        let decimal = parseInt(binary, 2);
+        return decimal;
+      }
+
+      function convertBinaryToDecimal() {
+        let binaryInput = document.getElementById("binaryInput").value;
+        let decimalOutput = binaryToDecimal(binaryInput);
+        document.getElementById("result").textContent = `Decimal equivalent: ${decimalOutput}`;
+      }
+    </script>
+  </body>
+</html>
